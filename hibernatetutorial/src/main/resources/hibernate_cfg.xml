@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-configuration>
+  <session-factory>
+    
+    <!-- Database connection settings -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.username">myuser</property>
+    <property name="hibernate.connection.password">mypassword</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mydatabase</property>
+    
+    <!-- JDBC connection pool (use the built-in) -->
+    <property name="connection.pool_size">1</property>
+    
+    <!-- Disable the second-level cache  -->
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+    
+    <!-- Log SQL queries -->
+    <property name="format_sql">true</property>
+    <property name="use_sql_comments">true</property>
+    
+    
+    <!-- MAPPINGS -->
+    <mapping class="hibernatetutorial.Employee"/>
+  </session-factory>
+</hibernate-configuration>
