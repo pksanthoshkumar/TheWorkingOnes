@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="#{view.index.title}">Welcome!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../../resources/css/bootstrap.min.css" rel="stylesheet"
+	media="screen" th:href="@{/resources/css/bootstrap.min.css}" />
+<link href="../../../resources/css/core.css" rel="stylesheet"
+	media="screen" th:href="@{/resources/css/core.css}" />
+<script src="../../../resources/js/jquery.min.js"
+	th:src="@{/resources/js/jquery.min.js}"></script>
+<script src="../../../resources/js/bootstrap.min.js"
+	th:src="@{/resources/js/bootstrap.min.js}"></script>
+
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+
+<script>
+	function getAccountList() {
+		 $.get("/users", function(data, status){
+		 		var html = "<table><tr><th>User</th><th>User Role</th></tr>";
+		        $.each(data, function (i, val) {
+		            html += '<tr><td>' + val.email + '</td><td>' + val.role + '</td></tr>';
+		        });       
+		        
+		        $("#div1").html(html + "</table>");       		
+		 });
+		
+	}
+</script>
+
+</head>
+<body onload="getAccountList()">
+	<div th:replace="fragments/layout :: header"></div>
+	<div class="container">
+		<p class="lead text-center">Account List</p>
+		<div th:replace="fragments/layout :: footer"></div>
+	</div>
+
+
+
+	<div id="div1">
+		<h2>Let jQuery AJAX Change This Text</h2>
+	</div>
+
+
+</body>
+</html>

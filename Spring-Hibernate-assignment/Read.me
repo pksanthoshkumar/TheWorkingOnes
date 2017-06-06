@@ -1,0 +1,20 @@
+How to run:
+    mvn test tomcat7:run
+
+Q1: Define an additional validator annotation to limit user registration to "@rbc.com"
+    test@test.org --> returns error
+    test@rbc.com --> can signup and login
+
+Q2: Write a rest API to retrieve a list of all available user accounts
+
+
+Q3: Sort all the results from (Q2) by username in the service method
+    (don't use SQL statements for sorting)
+
+
+Q4: Write a new unit test method to test your new service method (Q3) in "AccountServiceTest" class
+
+
+Q5: Add a new page and make it secure for Admin only and show the list os user accounts
+     (Use your Rest API - Q2)
+
