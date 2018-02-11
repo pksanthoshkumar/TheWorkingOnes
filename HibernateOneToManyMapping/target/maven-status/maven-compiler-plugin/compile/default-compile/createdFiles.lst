@@ -1,0 +1,8 @@
+com/journaldev/hibernate/model/Items1.class
+com/journaldev/hibernate/main/HibernateOneToManyMain.class
+com/journaldev/hibernate/model/Cart.class
+com/journaldev/hibernate/main/HibernateOneToManyAnnotationMain.class
+com/journaldev/hibernate/model/Cart1.class
+com/journaldev/hibernate/util/HibernateUtil.class
+com/journaldev/hibernate/model/Items.class
+com/journaldev/hibernate/util/HibernateAnnotationUtil.class
